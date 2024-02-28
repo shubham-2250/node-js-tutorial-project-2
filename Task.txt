@@ -1,0 +1,14 @@
+
+USER Related Func :-
+/user post
+/user get
+/user patch
+/user delete
+
+Blog related :-
+/blog Get (auth not required)
+/blog Post (auth required)
+/blog Put (auth required)
+/blog Patch (auth required)
+/blog Delete (auth required)
+/blog/like get (auth required)

@@ -8,8 +8,8 @@ app.use((req,res,next)=>{
     // your changes here;
     next();
 });
+app.route()
 //necessary to read body of a req
 app.use(express.urlencoded({extended : false}));
 
 app.listen(8000,()=>{console.log("server started")});
-
