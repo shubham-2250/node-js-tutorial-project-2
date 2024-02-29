@@ -1,6 +1,6 @@
 // const express = require('express');
 import express from 'express';
-import fs from 'fs';
+
 import { logger } from './controller/logger_controller.js';
 import {user_get, user_post, user_patch} from './controller/user_controller.js';
 
