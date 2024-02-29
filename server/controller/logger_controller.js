@@ -1,6 +1,7 @@
-import fs from 'fs';
+const { log } = require('console');
+const fs = require('fs');
 
-export function logger(req,res,next){
+function logger(req,res,next){
     return (req,res,next)=>{
         // your changes here;
         console.log("hi");
@@ -11,3 +12,5 @@ export function logger(req,res,next){
         });
     }
 }
+
+module.exports = logger;

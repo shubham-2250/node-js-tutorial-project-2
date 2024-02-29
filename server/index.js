@@ -1,24 +1,18 @@
 // const express = require('express');
-import express from 'express';
-
-import { logger } from './controller/logger_controller.js';
-import {user_get, user_post, user_patch} from './controller/user_controller.js';
+const express = require('express');
+const logger = require('./controller/logger_controller.js');
+const {user_get, user_post, user_patch}  = require('./controller/user_controller.js');
 
 //init
 
 const router = express.Router();
 
 const app = express();
-
+app.use(express.urlencoded({ extended: false }));
 //middleware
-app.use(
-logger()
-);
+app.use(logger());
 
-app.route('/user').get(user_get).post(user_post).patch(user_patch);
-// app.get('/userweqwe',()=>console.log("hello"));
-// app.post('/userqweweq')
-//necessary to read body of a req
-app.use(express.urlencoded({extended : false}));
 
-app.listen(8000,()=>{console.log("server started http://localhost:8000")});
+
+app.route('/user').get(user_get()).post(user_post()).patch(user_patch());
+app.listen(8000, () => { console.log("server started http://localhost:8000") });
